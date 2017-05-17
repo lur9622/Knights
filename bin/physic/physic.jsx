@@ -6,26 +6,13 @@ export default class Physic {
       this.World = Matter.World
       this.Bodies = Matter.Bodies
       this.RenderEngine = this.Engine.create()
-      this.RenderEngine.world.gravity.y = 0
-
-      this.bindMethods(this);
-      let boxA = this.Bodies.rectangle(400, 200, 80, 80)
-      this.elements = []
-      this.elements.push(boxA);
-      this.World.add(this.RenderEngine.world, boxA)
       this.Engine.run(this.RenderEngine)
-      //setInterval(this.loop, 17)
+      this.RenderEngine.timing.timeScale = 0.8
   }
-  loop(){
-    //console.log(this.elements)
-  }
-  bindMethods(that){
-    this.loop = this.loop.bind(that);
-  }
-  addToWorld(el){
-    this.elements.push(el);
+  addToWorld(element) {
     this.World.add (
-      this.RenderEngine.world , el
+      this.RenderEngine.world ,
+      element
     )
   }
 }
