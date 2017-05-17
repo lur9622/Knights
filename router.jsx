@@ -8,7 +8,7 @@ import {LayoutView} from './bin/views/layout/layoutView.jsx';
 //Views
 import Test from './bin/views/test/testView.jsx';
 
-FlowRouter.route("/", {
+FlowRouter.route("/test", {
     action: function() {
       mount(LayoutView,{
         content : (<Test />)
